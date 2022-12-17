@@ -12,10 +12,13 @@ class ApiService {
           cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
           credentials: 'same-origin', // include, *same-origin, omit
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods':'*',
+            'Access-Control-Allow-Headers':'content-type',
           }
         }
-      );
+      ); 
       return rubrics.json();
     } catch (err) {
       console.log(err);
