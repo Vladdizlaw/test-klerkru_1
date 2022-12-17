@@ -9,8 +9,12 @@ class ApiService {
           cache: "no-cache",
           credentials: "same-origin",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
+            // 'Content-Type': 'application/json',
+              // 'Access-Control-Allow-Origin': '*',
+            // 'Access-Control-Allow-Methods':'*',
+            // 'Access-Control-Allow-Headers':'content-type',
+            'Content-Type': 'application/x-www-form-urlencoded',
+        }
         }
       );
       return rubrics.json();

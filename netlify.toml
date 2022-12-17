@@ -1,0 +1,4 @@
+[[headers]]
+ for = "/*"
+ [headers.value]
+    Content-Type: application/x-www-form-urlencoded,
