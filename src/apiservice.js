@@ -1,24 +1,18 @@
-import axios from "axios";
-
-
 class ApiService {
   async getRubrics() {
     try {
       const rubrics = await fetch(
         "https://www.klerk.ru/yindex.php/v3/event/rubrics",
         {
-          method: 'GET', // *GET, POST, PUT, DELETE, etc.
-          mode: 'cors', // no-cors, *cors, same-origin
-          cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: 'same-origin', // include, *same-origin, omit
+          method: "GET",
+          mode: "cors",
+          cache: "no-cache",
+          credentials: "same-origin",
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods':'*',
-            'Access-Control-Allow-Headers':'content-type',
-          }
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
         }
-      ); 
+      );
       return rubrics.json();
     } catch (err) {
       console.log(err);
@@ -29,14 +23,13 @@ class ApiService {
       const rubricsAndEmpties = await fetch(
         "https://www.klerk.ru/yindex.php/v3/event/rubrics?allowEmpty=1",
         {
-          method: 'GET', // *GET, POST, PUT, DELETE, etc.
-          mode: 'cors', // no-cors, *cors, same-origin
-          cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: 'same-origin', // include, *same-origin, omit
+          method: "GET",
+          mode: "cors",
+          cache: "no-cache",
+          credentials: "same-origin",
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          }
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
         }
       );
       return rubricsAndEmpties.json();
@@ -45,4 +38,4 @@ class ApiService {
     }
   }
 }
-export default new ApiService()
+export default new ApiService();
