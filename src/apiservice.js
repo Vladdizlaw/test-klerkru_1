@@ -1,3 +1,5 @@
+import axios from "axios";
+
 
 class ApiService {
   async getRubrics() {
@@ -11,11 +13,9 @@ class ApiService {
           credentials: 'same-origin', // include, *same-origin, omit
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
           }
         }
       );
-      console.log(rubrics)
       return rubrics.json();
     } catch (err) {
       console.log(err);
@@ -27,7 +27,7 @@ class ApiService {
         "https://www.klerk.ru/yindex.php/v3/event/rubrics?allowEmpty=1",
         {
           method: 'GET', // *GET, POST, PUT, DELETE, etc.
-          mode: 'no-cors', // no-cors, *cors, same-origin
+          mode: 'cors', // no-cors, *cors, same-origin
           cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
           credentials: 'same-origin', // include, *same-origin, omit
           headers: {
